@@ -7,7 +7,7 @@ const ProductList = () => {
   return (
     <div
       id="product"
-      className="px-4 md:px-12 py-5 md:py-10 flex justify-center items-center"
+      className="px-4 md:px-12 py-5 md:py-10 flex justify-center items-center bg-amber-50"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {products.map((product, index) => (
