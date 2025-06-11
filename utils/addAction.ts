@@ -59,7 +59,7 @@ export async function addAction(formdata: FormData) {
     };
   } catch (error) {
     return {
-      error: "something went wrong, please try again",
+      error: "something went wrong, please try again" + error,
     };
   }
 }
