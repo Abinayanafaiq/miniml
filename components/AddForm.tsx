@@ -1,15 +1,26 @@
+"use client";
+
 import { addAction } from "@/utils/addAction";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const AddForm = () => {
+  const router = useRouter();
   async function clientAddAction(FormData: FormData) {
     const { error, success } = await addAction(FormData);
 
     if (error) {
+      toast.error(error);
+    }
+
+    if (success) {
+      toast.success(success);
+      router.push("/");
     }
   }
   return (
     <form
-      action={create}
+      action={clientAddAction}
       className="w-full max-w-xl mx-auto flex flex-col justify-center items-center space-y-4 mt-3 md:mt-5"
     >
       <div className="w-full flex flex-col">
